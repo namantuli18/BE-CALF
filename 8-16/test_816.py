@@ -78,5 +78,5 @@ for i in tqdm(range(len(pics))):
 
     cv2.imwrite('./results_816/'+pure_name+'_becalf_816.png',im)
 
-    print time.time()-starttime
+    print(time.time()-starttime)
 
