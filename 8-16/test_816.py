@@ -7,7 +7,6 @@ import sys
 import time
 from tqdm import tqdm
 from becalf import becalf
-import tf.compat.v1.train.Saver
 
 
 if not os.path.exists('results_816'):  # output directory
@@ -44,7 +43,7 @@ model = becalf(x, downscaled, is_training, 1)
 sess = tf.Session(config=config)
 init = tf.global_variables_initializer()
 sess.run(init)
-
+import tensorflow.compat.v1.train.Saver
 saver = Saver()
 saver.restore(sess, './latest')
 
