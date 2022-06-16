@@ -7,6 +7,7 @@ import sys
 import time
 from tqdm import tqdm
 from becalf import becalf
+import tf.compat.v1.train.Saver
 
 
 if not os.path.exists('results_816'):  # output directory
@@ -44,7 +45,7 @@ sess = tf.Session(config=config)
 init = tf.global_variables_initializer()
 sess.run(init)
 
-saver = tf.train.Saver()
+saver = Saver()
 saver.restore(sess, './latest')
 
 pics = glob.glob('../test/*')  # input images directory
