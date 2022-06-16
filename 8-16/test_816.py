@@ -45,7 +45,7 @@ init = tf.global_variables_initializer()
 sess.run(init)
 
 saver = tf.compat.v1.train.Saver
-saver.restore(sess, save_path = './latest')
+saver.restore(sess = sess, save_path = './latest')
 
 pics = glob.glob('../test/*')  # input images directory
 
