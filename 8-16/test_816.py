@@ -43,8 +43,8 @@ model = becalf(x, downscaled, is_training, 1)
 sess = tf.Session(config=config)
 init = tf.global_variables_initializer()
 sess.run(init)
-import tensorflow.compat.v1.train.Saver
-saver = Saver()
+
+saver = tf.compat.v1.train.Saver
 saver.restore(sess, './latest')
 
 pics = glob.glob('../test/*')  # input images directory
